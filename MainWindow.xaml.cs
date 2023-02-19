@@ -29,11 +29,18 @@ namespace ReFileNameHelper
 
         private void SelectFolderButton_Click(object sender, RoutedEventArgs e)
         {
-            var dialog = new System.Windows.Forms.FolderBrowserDialog();
-            System.Windows.Forms.DialogResult result = dialog.ShowDialog();
-            if (result == System.Windows.Forms.DialogResult.OK)
+            var dialog = new OpenFileDialog();
+            dialog.Filter = "文件夹|*.none";
+            dialog.FileName = "请选择文件夹";
+            dialog.CheckFileExists = false;
+            dialog.CheckPathExists = true;
+            dialog.Multiselect = false;
+            dialog.Title = "请选择要重命名的文件夹";
+            dialog.ValidateNames = false;
+            if (dialog.ShowDialog() == true)
             {
-                this.FolderPathTextBox.Text = dialog.SelectedPath;
+                var folderPath = Path.GetDirectoryName(dialog.FileName);
+                this.FolderPathTextBox.Text = folderPath;
             }
         }
 
@@ -72,6 +79,6 @@ namespace ReFileNameHelper
 
             MessageBox.Show("文件重命名完成。");
         }
-
     }
+
 }
