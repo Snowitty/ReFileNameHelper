@@ -5,8 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ReFileNameHelper"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="ReFileNameHelper" Height="350" Width="525">
     <Grid>
-
+        <Label Content="请输入要重命名的文件夹路径：" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="FolderPathTextBox" HorizontalAlignment="Left" Height="23" Margin="10,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="392"/>
+        <Button x:Name="SelectFolderButton" Content="选择文件夹" HorizontalAlignment="Left" Margin="408,34,0,0" VerticalAlignment="Top" Width="87" Click="SelectFolderButton_Click"/>
+        <Label Content="请输入文件名前缀：" HorizontalAlignment="Left" Margin="10,73,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="FileNamePrefixTextBox" HorizontalAlignment="Left" Height="23" Margin="10,96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="485"/>
+        <Label Content="请输入文件名起始编号：" HorizontalAlignment="Left" Margin="10,135,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="StartNumberTextBox" HorizontalAlignment="Left" Height="23" Margin="10,158,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="485"/>
+        <Button x:Name="RenameButton" Content="批量重命名" HorizontalAlignment="Left" Margin="408,197,0,0" VerticalAlignment="Top" Width="87" Click="RenameButton_Click"/>
     </Grid>
 </Window>
