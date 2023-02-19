@@ -39,7 +39,7 @@ namespace ReFileNameHelper
             dialog.ValidateNames = false;
             if (dialog.ShowDialog() == true)
             {
-                var folderPath = Path.GetDirectoryName(dialog.FileName);
+                var folderPath = System.IO.Path.GetDirectoryName(dialog.FileName);
                 this.FolderPathTextBox.Text = folderPath;
             }
         }
@@ -70,9 +70,9 @@ namespace ReFileNameHelper
 
             foreach (var file in files)
             {
-                string extension = Path.GetExtension(file.FullName);
+                string extension = System.IO.Path.GetExtension(file.FullName);
                 string newName = string.Format("{0}_{1:D3}{2}", this.FileNamePrefixTextBox.Text, index, extension);
-                string newPath = Path.Combine(directory.FullName, newName);
+                string newPath = System.IO.Path.Combine(directory.FullName, newName);
                 file.MoveTo(newPath);
                 index++;
             }
